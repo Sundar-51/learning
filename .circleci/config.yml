@@ -1,0 +1,25 @@
+version: 2.1
+
+jobs:
+  run-and-save-output:
+    docker:
+      - image: cimg/python:3.11  # Use CircleCI's official Python image
+
+    steps:
+      - checkout  # Clone your repo
+
+      - run:
+          name: Run Python script and save output
+          command: |
+            python main.py > output.txt
+            cat output.txt  # Optional: Print output to CircleCI logs
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - output.txt  # Save for use in other jobs (optional)
+
+workflows:
+  simple-run:
+    jobs:
+      - run-and-save-output
