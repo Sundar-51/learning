@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Run Python script and save output
           command: |
-            python main.py > output.txt
+            python prime_numbers.py 10 > output.txt
             cat output.txt  # Optional: Print output to CircleCI logs
 
       - persist_to_workspace:
