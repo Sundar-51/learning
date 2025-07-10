@@ -16,6 +16,6 @@ def wishlist(wish_list):
 
 
 
-wish_list = ["airpods", "earphone-truely-wireless", "proper-lighting", "anchors", "clothes-dryer"]
+wish_list = ["1billion"]
 
 a = wishlist(wish_list)
